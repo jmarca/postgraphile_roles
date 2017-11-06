@@ -1,0 +1,4 @@
+%syntax-version=1.0.0
+%project=postgraphql_roles
+
+server_role 2017-11-06T18:38:48Z James E. Marca <james@activimetrics.com> # the server role for postgraphql
