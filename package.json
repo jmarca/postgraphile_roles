@@ -6,14 +6,11 @@
   "directories": {
     "test": "test"
   },
-  "config": {
-    "targetdb": "db:pg:postgraphql"
-  },
   "scripts": {
-    "test": "pg_prove -p ${SQITCH_DB_PORT} -U ${SQITCH_DB_USER} -h ${SQITCH_DB_HOST} -d ${SQITCH_DB_URI} test/*.sql"
-    "sqitch:deploy": "sqitch deploy ${SQITCH_DB_URI}",
-    "sqitch:revert": "sqitch revert ${SQITCH_DB_URI}",
-    "install": "SQITCH_DB_URI=${SQITCH_DB_URI:-$npm_package_config_targetdb} npm run sqitch:deploy"
+    "test": "export SQITCH_DB_USER=${SQITCH_DB_USER:=postgres} && export SQITCH_DB_HOST=${SQITCH_DB_HOST:=127.0.0.1} && export SQITCH_DB_PORT=${SQITCH_DB_PORT:=5432} && export SQITCH_DB=${SQITCH_DB:=sqitch}  && export SQITCH_DB_URI=${SQITCH_DB_URI:=db:pg://$SQITCH_DB_USER@$SQITCH_DB_HOST:$SQITCH_DB_PORT/$SQITCH_DB} && pg_prove -p ${SQITCH_DB_PORT} -U ${SQITCH_DB_USER} -h ${SQITCH_DB_HOST} -d ${SQITCH_DB} test/*.sql",
+    "sqitch:deploy": "export SQITCH_DB_USER=${SQITCH_DB_USER:=postgres} && export SQITCH_DB_HOST=${SQITCH_DB_HOST:=127.0.0.1} && export SQITCH_DB_PORT=${SQITCH_DB_PORT:=5432} && export SQITCH_DB=${SQITCH_DB:=sqitch}  && export SQITCH_DB_URI=${SQITCH_DB_URI:=db:pg://$SQITCH_DB_USER@$SQITCH_DB_HOST:$SQITCH_DB_PORT/$SQITCH_DB} && sqitch deploy $SQITCH_DB_URI",
+    "sqitch:revert": "export SQITCH_DB_USER=${SQITCH_DB_USER:=postgres} && export SQITCH_DB_HOST=${SQITCH_DB_HOST:=127.0.0.1} && export SQITCH_DB_PORT=${SQITCH_DB_PORT:=5432} && export SQITCH_DB=${SQITCH_DB:=sqitch}  && export SQITCH_DB_URI=${SQITCH_DB_URI:=db:pg://$SQITCH_DB_USER@$SQITCH_DB_HOST:$SQITCH_DB_PORT/$SQITCH_DB} && sqitch revert -y $SQITCH_DB_URI",
+    "install": "npm run sqitch:deploy"
   },
   "repository": {
     "type": "git",

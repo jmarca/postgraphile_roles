@@ -2,6 +2,13 @@
 
 BEGIN;
 
-drop role forum_anonymous;
+do $$
+begin
+    perform true from pg_roles where rolname='forum_anonymous';
+    if found then
+       drop role forum_anonymous;
+    end if;
+end;
+$$;
 
 COMMIT;
