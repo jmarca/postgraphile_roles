@@ -19,7 +19,7 @@
   "author": "James E. Marca",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jmarca/postgraphql_roles/issues"
+    "url": "https://github.com/jmarca/postgraphql_demo_roles/issues"
   },
-  "homepage": "https://github.com/jmarca/postgraphql_roles#readme"
+  "homepage": "https://github.com/jmarca/postgraphql_demo_roles#readme"
 }
