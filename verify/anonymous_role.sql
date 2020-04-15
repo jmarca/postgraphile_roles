@@ -1,4 +1,4 @@
--- Verify postgraphql_roles:server_role on pg
+-- Verify postgraphile_roles:server_role on pg
 
 BEGIN;
 

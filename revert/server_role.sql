@@ -1,12 +1,12 @@
--- Revert postgraphql_roles:server_role from pg
+-- Revert postgraphile_roles:server_role from pg
 
 BEGIN;
 
 do $$
 begin
-    perform true from pg_roles where rolname='postgraphql_server';
+    perform true from pg_roles where rolname='postgraphile_server';
     if found then
-       drop role postgraphql_server;
+       drop role postgraphile_server;
     end if;
 end;
 $$;

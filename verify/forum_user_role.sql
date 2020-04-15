@@ -1,4 +1,4 @@
--- Verify postgraphql_roles:forum_user_role on pg
+-- Verify postgraphile_roles:forum_user_role on pg
 
 BEGIN;
 
