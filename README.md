@@ -1,4 +1,4 @@
-# Roles for postgraphql
+# Roles for postgraphile
 
 To use this, you need to have sqitch installed properly.  To run tests,
 you need to have pg_prove installed properly.
@@ -44,7 +44,7 @@ export SQITCH_DB_USER=someuser
 export SQITCH_DB_HOST=dbhostaddress
 export SQITCH_DB_PORT=5432
 export SQITCH_DB=mysqitchdb
-npm install -S jmarca/postgraphql_demo_roles
+npm install -S jmarca/postgraphile_demo_roles
 ```
 
 That should do the trick.

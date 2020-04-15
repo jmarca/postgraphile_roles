@@ -1,7 +1,7 @@
 {
-  "name": "postgraphql_roles",
+  "name": "postgraphile_roles",
   "version": "1.0.0",
-  "description": "Sqitch-based roles for postgraphql project",
+  "description": "Sqitch-based roles for postgraphile project",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -14,12 +14,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "gitolite:a/jmarca/graphql_work/postgraphql/postgraphql_roles"
+    "url": "gitolite:a/jmarca/postgraphile_related/postgraphile_roles"
   },
   "author": "James E. Marca",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jmarca/postgraphql_demo_roles/issues"
+    "url": "https://github.com/jmarca/postgraphile_roles/issues"
   },
-  "homepage": "https://github.com/jmarca/postgraphql_demo_roles#readme"
+  "homepage": "https://github.com/jmarca/postgraphile_roles#readme"
 }
