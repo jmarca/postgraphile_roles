@@ -6,7 +6,7 @@ BEGIN;
 SELECT no_plan();
 -- SELECT plan(1);
 
-SELECT pass('Test server_role!');
+SELECT pass('Test owner_role!');
 
 SELECT finish();
 ROLLBACK;
