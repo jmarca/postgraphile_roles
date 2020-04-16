@@ -6,7 +6,7 @@ BEGIN;
 SELECT no_plan();
 -- SELECT plan(1);
 
-SELECT pass('Test forum_user_role!');
+SELECT pass('Test authenticated role!');
 
 SELECT finish();
 ROLLBACK;

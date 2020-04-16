@@ -1,11 +1,11 @@
--- Verify postgraphile_roles:anonymous_role on pg
+-- Verify postgraphile_roles:forum_user_role on pg
 
 BEGIN;
 
-select 1/count(*) from pg_roles where rolname=:'DATABASE_VISITOR';
+select 1/count(*) from pg_roles where rolname=:'DATABASE_AUTHENTICATOR';
 
 with visitorid (oid) as (
-    select oid from pg_roles where rolname= :'DATABASE_VISITOR'
+    select oid from pg_roles where rolname= :'DATABASE_AUTHENTICATOR'
 ),
 assigned_role(rolname,oid,member) as (
     select a.rolname,a.oid,b.roleid as member

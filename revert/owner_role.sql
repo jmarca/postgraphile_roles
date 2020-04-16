@@ -17,13 +17,3 @@ $func$  LANGUAGE plpgsql;
 SELECT pg_temp.foo(:'DATABASE_OWNER');
 
 COMMIT;
-
-
--- do $$
--- begin
---     perform true from pg_roles where rolname='DATABASE_OWNER';
---     if found then
---        drop role 'DATABASE_OWNER';
---     end if;
--- end;
--- $$;

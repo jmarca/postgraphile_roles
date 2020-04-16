@@ -1,4 +1,4 @@
--- Revert postgraphile_roles:anonymous_role from pg
+-- Revert postgraphile_roles:forum_user_role from pg
 
 BEGIN;
 
@@ -14,6 +14,6 @@ BEGIN
 END
 $func$  LANGUAGE plpgsql;
 
-SELECT pg_temp.foo(:'DATABASE_VISITOR');
+SELECT pg_temp.foo(:'DATABASE_AUTHENTICATOR');
 
 COMMIT;

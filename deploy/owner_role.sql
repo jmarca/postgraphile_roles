@@ -14,7 +14,7 @@ BEGIN
         quote_ident(_role) ||
         ' WITH LOGIN PASSWORD ' ||
         quote_literal(_pass) ||
-        ' SUPERUSER';
+        ' CREATEROLE CREATEDB'; -- shying away from SUPERUSER for now
     end if;
 
 END
