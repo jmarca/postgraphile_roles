@@ -7,9 +7,9 @@
     "test": "test"
   },
   "scripts": {
-    "test": "export SQITCH_DB_USER=${SQITCH_DB_USER:=postgres} && export SQITCH_DB_HOST=${SQITCH_DB_HOST:=127.0.0.1} && export SQITCH_DB_PORT=${SQITCH_DB_PORT:=5432} && export SQITCH_DB=${SQITCH_DB:=sqitch}  && export SQITCH_DB_URI=${SQITCH_DB_URI:=db:pg://$SQITCH_DB_USER@$SQITCH_DB_HOST:$SQITCH_DB_PORT/$SQITCH_DB} && pg_prove -p ${SQITCH_DB_PORT} -U ${SQITCH_DB_USER} -h ${SQITCH_DB_HOST} -d ${SQITCH_DB} test/*.sql",
-    "sqitch:deploy": "export SQITCH_DB_USER=${SQITCH_DB_USER:=postgres} && export SQITCH_DB_HOST=${SQITCH_DB_HOST:=127.0.0.1} && export SQITCH_DB_PORT=${SQITCH_DB_PORT:=5432} && export SQITCH_DB=${SQITCH_DB:=sqitch}  && export SQITCH_DB_URI=${SQITCH_DB_URI:=db:pg://$SQITCH_DB_USER@$SQITCH_DB_HOST:$SQITCH_DB_PORT/$SQITCH_DB} && sqitch deploy $SQITCH_DB_URI",
-    "sqitch:revert": "export SQITCH_DB_USER=${SQITCH_DB_USER:=postgres} && export SQITCH_DB_HOST=${SQITCH_DB_HOST:=127.0.0.1} && export SQITCH_DB_PORT=${SQITCH_DB_PORT:=5432} && export SQITCH_DB=${SQITCH_DB:=sqitch}  && export SQITCH_DB_URI=${SQITCH_DB_URI:=db:pg://$SQITCH_DB_USER@$SQITCH_DB_HOST:$SQITCH_DB_PORT/$SQITCH_DB} && sqitch revert -y $SQITCH_DB_URI",
+    "test": "PGUSER=${PGUSER:=postgres} PGHOST=${PGHOST:=127.0.0.1} PGPORT=${PGPORT:=5432} PGDATABASE=${PGDATABASE:=sqitch} pg_prove test/*.sql",
+    "sqitch:deploy": "PGUSER=${PGUSER:=postgres} PGHOST=${PGHOST:=127.0.0.1} PGPORT=${PGPORT:=5432} PGDATABASE=${PGDATABASE:=sqitch} sqitch deploy",
+    "sqitch:revert": "PGUSER=${PGUSER:=postgres} PGHOST=${PGHOST:=127.0.0.1} PGPORT=${PGPORT:=5432} PGDATABASE=${PGDATABASE:=sqitch} sqitch revert -y",
     "install": "npm run sqitch:deploy"
   },
   "repository": {
