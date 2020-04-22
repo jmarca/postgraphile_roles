@@ -4,7 +4,7 @@ BEGIN;
 
 set search_path to public;
 
-CREATE FUNCTION pg_temp.foo(_role text, _owner_role text)
+CREATE FUNCTION pg_temp.foo(_role text, _pass text)
   RETURNS void AS
 $func$
 BEGIN
@@ -12,15 +12,14 @@ BEGIN
     if not found then
         EXECUTE 'CREATE ROLE ' ||
           quote_ident(_role) ||
-          ' WITH  NOLOGIN';
-        EXECUTE 'GRANT ' ||
-          quote_ident(_role) ||
-          ' TO ' ||
-          quote_ident(_owner_role);
+        ' WITH LOGIN PASSWORD ' ||
+        quote_literal(_pass) ||
+        ' NOINHERIT';
+
     end if;
 END
 $func$  LANGUAGE plpgsql;
 
-SELECT pg_temp.foo(:'DATABASE_VISITOR', :'DATABASE_OWNER');
+SELECT pg_temp.foo(:'DATABASE_AUTHENTICATOR', :'DATABASE_AUTHENTICATOR_PASSWORD');
 
 COMMIT;

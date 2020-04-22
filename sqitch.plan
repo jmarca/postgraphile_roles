@@ -3,4 +3,4 @@
 
 owner_role 2020-04-15T18:38:48Z James E. Marca <james@activimetrics.com> # the server role for postgraphile
 anonymous_role [owner_role] 2020-04-16T18:59:28Z James E. Marca <james@activimetrics.com> # create an anonymous role
-authenticated_role [owner_role] 2020-04-16T19:00:18Z James E. Marca <james@activimetrics.com> # create an authenticated user role
+authenticated_role [anonymous_role] 2020-04-16T19:00:18Z James E. Marca <james@activimetrics.com> # create an authenticated user role
