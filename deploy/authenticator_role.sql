@@ -1,4 +1,4 @@
--- Deploy postgraphile_roles:anonymous_role to pg
+-- Deploy postgraphile_roles:authenticator_role to pg
 
 BEGIN;
 

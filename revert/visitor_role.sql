@@ -1,4 +1,4 @@
--- Revert postgraphile_roles:anonymous_role from pg
+-- Revert postgraphile_roles:visitor_role from pg
 
 BEGIN;
 

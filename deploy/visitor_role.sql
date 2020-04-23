@@ -1,10 +1,10 @@
--- Deploy postgraphile_roles:authenticated_role to pg
+-- Deploy postgraphile_roles:visitor_role to pg
 
 BEGIN;
 
 set search_path to public;
 
-CREATE FUNCTION pg_temp.foo(_role text, _owner_role text)
+CREATE FUNCTION pg_temp.foo(_role text, _login_role text)
   RETURNS void AS
 $func$
 BEGIN
@@ -16,7 +16,7 @@ BEGIN
         EXECUTE 'GRANT ' ||
           quote_ident(_role) ||
           ' TO ' ||
-          quote_ident(_owner_role);
+          quote_ident(_login_role);
     end if;
 END
 $func$  LANGUAGE plpgsql;

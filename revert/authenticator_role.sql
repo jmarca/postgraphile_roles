@@ -1,4 +1,4 @@
--- Revert postgraphile_roles:forum_user_role from pg
+-- Revert postgraphile_roles:authenticator_role from pg
 
 BEGIN;
 

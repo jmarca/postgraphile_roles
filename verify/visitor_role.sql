@@ -1,4 +1,4 @@
--- Verify postgraphile_roles:anonymous_role on pg
+-- Verify postgraphile_roles:forum_user_role on pg
 
 BEGIN;
 
@@ -12,7 +12,7 @@ assigned_role(rolname,oid,member) as (
     from pg_roles a
     join pg_auth_members b on (a.oid=b.member)
     join visitorid c on (b.roleid=c.oid)
-    where a.rolname = :'DATABASE_OWNER'
+    where a.rolname = :'DATABASE_AUTHENTICATOR'
 )
 select 1/count(*) from assigned_role;
 
